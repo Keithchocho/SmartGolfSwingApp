@@ -13,11 +13,11 @@ from 'react-native';
 
 
 
-const LocalVideoScreen = ({ navigation }) => {
+const VideoRecordScreen = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Text style={{color:"#ff6347",fontSize:40,fontWeight:'500',textAlign:"center"}}>
-                    Video Record Screen
+                    Local Video Screen
             </Text>
             <Image source={require('C:/Users/aa/Desktop/GolfApplication/SmartGolfSwingApp/Src/Patrick.jpg')} />
                 
@@ -28,7 +28,7 @@ const LocalVideoScreen = ({ navigation }) => {
 
 
 
-export default  LocalVideoScreen;
+export default  VideoRecordScreen;
 
 
 

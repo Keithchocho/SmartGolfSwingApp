@@ -18,7 +18,7 @@ const VideoSelectScreen = ({ navigation }) => {
         <View style={styles.container}>
            <View style={styles.ButtonContainer1}>
                 <TouchableOpacity 
-                 onPress={() => {navigation.navigate('VideoScreen')}}>
+                 onPress={() => {navigation.navigate('VideoRecord')}}>
                     <Text style={styles.Text}> 동영상 촬영</Text>
                 </TouchableOpacity>
            </View>
