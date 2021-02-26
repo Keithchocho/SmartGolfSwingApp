@@ -17,7 +17,7 @@ const LocalVideoScreen = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Text style={{color:"#ff6347",fontSize:40,fontWeight:'500',textAlign:"center"}}>
-                    Video Record Screen
+                    Upload Record Screen
             </Text>
             <Image source={require('C:/Users/aa/Desktop/GolfApplication/SmartGolfSwingApp/Src/Patrick.jpg')} />
                 
