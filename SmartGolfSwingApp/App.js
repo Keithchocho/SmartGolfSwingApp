@@ -15,7 +15,7 @@ export default class App extends Component{
   // 시간을 넣어서 로딩페이지 잡아줄 예정
   componentDidMount = async() => {
     //1,000 1초 
-    setTimeout(() => {this.setState({isLoading: false})},2500);
+    setTimeout(() => {this.setState({isLoading: false})},2000);
   }
 
   render(){

@@ -4,11 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import StartScreen from '../Screens/StartScreen';
 import SignUpScreen from '../Screens/SignUpScreen';
 import SigninScreen from '../Screens/SigninScreen';
-import VisitorScreen from '../Screens/VisitorScreen';
 import SplashScreen from '../Screens/SplashScreen';
 import TabStackScreen from './TabStackScreen';
-import LocalVideoScreen from '../Screens/LocalVideoScreen';
-import VideoRecordScreen from '../Screens/VideoRecordScreen';
+import VideoScreen from '../Screens/VideoScreen';
+import DrawerStackScreen from './DrawerStackScreen';
+import EmailButton from '../Components/emailButton';
+import Signupform from '../Screens/Signupform';
+import NextButton from '../Components/NextButton';
+
 
 
 
@@ -20,11 +23,14 @@ const RootStackScreen = ({ navigation }) => (
         <RootStack.Screen name ='StartScreen' component ={StartScreen} />
         <RootStack.Screen name ='SigninScreen' component ={SigninScreen}/>
         <RootStack.Screen name ='SignUpScreen' component ={SignUpScreen}/>
-        <RootStack.Screen name ='VisitorScreen' component={VisitorScreen}/>
         <RootStack.Screen name ='TabStackScreen' component={TabStackScreen}/>
-        <RootStack.Screen name ='VideoRecord' component={VideoRecordScreen}/>
-        <RootStack.Screen name ='LocalVideo' component={LocalVideoScreen}/>
+        <RootStack.Screen name ='VideoScreen' component={VideoScreen}/>
+        <RootStack.Screen name ='Drawn' component={DrawerStackScreen}/>
+        <RootStack.Screen name ='EmailButton' component={EmailButton}/>
+        <RootStack.Screen name ='Signupform' component={Signupform}/>
+        <RootStack.Screen name ='NextButton' component={NextButton}/>
     </RootStack.Navigator>
 );
 
 export default RootStackScreen;
+

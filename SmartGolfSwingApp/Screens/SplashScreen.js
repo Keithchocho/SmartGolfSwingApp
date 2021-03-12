@@ -2,28 +2,53 @@ import React, {Component} from 'react';
 import 
 { View,
 Text,
-StyleSheet } 
+StyleSheet,
+Animated } 
 from 'react-native';
 import { render } from 'react-dom';
+import Logo from '../Components/Logo';
 
 export default class SplashScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    
+    state = {
+        animated:new Animated.Value(0),
+    }
+    
+    componentDidMount(){
+        const {animated} = this.state;
 
-        };
+        Animated.timing(animated,{
+            toValue:10,
+            duration:1000,
+            useNativeDriver: true,
+        }).start()
     }
 
     render() {
+        const { animated } = this.state;
+
         return(
             <View style ={styles.container}>
-                <View style = {styles.titleContainer}>
-                    <Text style = {styles.title}>Golf Swing</Text>
-                    <Text style = {styles.smalltitle}>{"                 "}by A.I</Text>
-                </View>
-                <View>
-                    <Text style = {styles.subtitle}>Built by No Doubt Co.</Text>
-                </View>
+                
+                <Animated.View
+                style={{         
+                justifyContent : 'center',
+                width:100,
+                height:100,
+                borderRadius:50,
+                justifyContent:"center",
+                position:'absolute',
+                backgroundColor : '#90ee90',
+                transform:[
+                    {
+                        scale:animated
+                    }
+                ]
+                }}>
+                
+                </Animated.View>
+                <Logo />    
+                
             </View>
         );
     }
@@ -32,31 +57,9 @@ export default class SplashScreen extends Component {
 const styles = StyleSheet.create({
 
     container: {
-        //backgroundColor
-        backgroundColor : '#90ee90',
         flex :1,
         justifyContent : "center",
         alignItems: "center",
     },
 
-    title : {
-        color:'#fffff0',
-        fontSize: 35,
-        fontWeight: 'bold',
-    },
-    smalltitle : {
-        color:'#fffff0',
-        fontWeight :'bold',
-        fontSize: 25,
-        
-    },
-
-    subtitle : {
-        color:'#fffff0',
-        fontWeight: '200',
-     },
-     titleContainer : {
-         justifyContent : 'center',
-         flex : 1
-     }
 });

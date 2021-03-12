@@ -8,8 +8,8 @@ import {
 export default class CustomButton extends Component{
     static defaultProps = {
         title: 'untitled',
-        buttonColor: '#000',
-        titleColor: '#fff',
+        buttonColor: 'black',
+        titleColor: 'black',
         onPress: () => null,
       }
     
@@ -38,9 +38,18 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'red',
+    marginLeft:16,
+    borderRadius:10,
+    shadowColor:"#000",
+    shadowOffset:{
+        width:0,
+        height:2,
+    },
+    shadowOpacity:0.25,
+    shadowRadius:.84,
+    elevation:5,
   },
   title: {
-    fontSize: 15,
+    fontSize: 14,
   },
 });

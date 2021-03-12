@@ -1,46 +1,142 @@
 
-import { Button, NativeAppEventEmitter, TouchableOpacity } from "react-native";
+import { Button, NativeAppEventEmitter, StatusBar, TouchableOpacity, Dimensions } from "react-native";
 import React, { Component } from 'react';
 import  { View, 
     StyleSheet, 
     Text,  
     TouchableHighlight
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { Header } from "react-native/Libraries/NewAppScreen";
+import { HeaderBackButton } from "@react-navigation/stack";
+import QuestionButton from "../Components/QuestionButton";
+import Awardsbox from "../Components/Awardsbox";
+import PerfectButton from "../Components/PerfectButton";
+import ImproveButton from "../Components/ImproveButton";
 
 
 
 
-class ListScreen extends Component {
+
+export default class ListScreen extends Component {
+
+
 
     render() {
        
+        const {width, height} =  Dimensions.get( 'window' );
+        console.log(width,height)
         
         return (
-           <View style={styles.container}>
-                <Text> 비디오 분석 </Text>
-            </View>
+            <View style={styles.maincontainer}> 
+           <StatusBar />         
+            
+           <ScrollView style={styles.container}>
+              
+               
+            <View style ={ styles.headerView}>
+                <QuestionButton />
+                <Text style={styles.headerText}>
+                    동영상 촬영하는법
+                </Text>
+            </View> 
+
+            <Text style ={styles.Text}>
+                    Awards
+            </Text>
+
+            <ScrollView // Awards View
+            horizontal 
+            showsHorizontalScrollIndicator={false}
+            style={styles.horizontalSCroll}>
+                <Awardsbox />
+                <Awardsbox />
+                <Awardsbox />
+                <Awardsbox />
+                <Awardsbox />
+                <Awardsbox />
+
+            </ScrollView>
+            <Text style ={ styles.PerfectText}>
+                    당신의 Pro Shot
+            </Text>
+
+            <ScrollView //  당신의 perfect View
+            horizontal
+            showsHorizontalScrollIndicator ={false}
+            style={styles.horizontalSCroll2}>
+                <PerfectButton />
+                <PerfectButton />
+                <PerfectButton />
+                <PerfectButton />
+                <PerfectButton />
+                <PerfectButton />
+                <PerfectButton />
+
+            </ScrollView>
+            <Text style ={ styles.Text}>
+                    개선사항
+            </Text>
+            
+           <ImproveButton />
+           <ImproveButton />
+           <ImproveButton />
+
+                
+                
+            </ScrollView>
+        </View>
         );
     }
 }
 
 
-export default ListScreen;
+
 
 const styles = StyleSheet.create({
+    maincontainer:{
+        flex:1,
+        backgroundColor:"white",
+        flexDirection:"column",
+
+    },
     container:{
         flex:1,
-        backgroundColor:'#90ee90',
-        alignItems:"center",
-        justifyContent: "center",
+        backgroundColor:'#FFF',
+ 
         
     },
+    headerView:{
+        borderBottomRightRadius:30,
+        borderBottomLeftRadius:30,
+        width:"100%",
+        height:100,
+        backgroundColor:"#0F152C",
+
+    },
     Text :{
-        fontSize:20,
-        color: 'red',
-        fontWeight: 'bold',
-        textAlign:"center",
-        
+        fontSize:25,
+        fontWeight:'bold',
+        marginHorizontal:31,
+        marginTop:30,
+        textAlign:"left"
     }, 
+    PerfectText :{
+        fontSize:22,
+        fontWeight:'bold',
+        marginHorizontal:32,
+       
+    }, 
+    headerText:{
+        color:'#FFF',
+        textAlign:"left",
+        fontSize:14,
+        fontWeight:"bold",
+        marginTop:52,
+        marginHorizontal:31
+      
+    },
+
      headline: {
         alignSelf: "center",
         fontSize: 18,
@@ -58,6 +154,20 @@ const styles = StyleSheet.create({
         paddingTop:80,
         
       },
+      horizontalSCroll1:{
+          height:220,
+          width:"100%",
+          marginLeft:32,
+          marginVertical:22,
+          backgroundColor:'black',
+      },
+      horizontalSCroll2:{
+        height:175,
+        width:"100%",
+        marginHorizontal:20,
+        marginTop:30,
+    }
+
 
 
 });
