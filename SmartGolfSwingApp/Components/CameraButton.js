@@ -8,30 +8,35 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class CameraButton extends React.Component {
 
-    state = {
-        disapearAni :  new Animated.Value(1)
-    };
+    constructor(props) {
+        super(props)
+        this.buttonsize = new Animated.Value(1)
+    }
+
 
     ButtonAnimation = () => {
-        Animated.timing(this.state.disapearAni,{
-            toValue:0.95,
-            duration:200,
-            useNativeDriver:false
-        }),
-        Animated.timing(this.state.disapearAni,{
-            toValue:1,
-            duration:200,
-            useNativeDriver:false
-        }).start();
+            Animated.timing(this.buttonsize, {
+                toValue:0,
+                duration:200,
+                useNativeDriver:false
+            }).start();
+        
     };
 
         render(){
+
+            const { navigation } = this.props;
+           
+            const sizeStyle =    this.buttonSize;
+             
+            
+
         return(
+            
             <View style={{ position:'absolute', alignItems:"center" }} >
-                <Animated.View style ={styles.button}>
-              
-                    <TouchableOpacity onPress={this.ButtonAnimation} >
-                    {/* IconAttempted to assign to readonly property. */}
+                
+                <Animated.View style ={[styles.button, sizeStyle]}>
+                    <TouchableOpacity onPress={this.ButtonAnimation}>
                         <Animated.View> 
                             <Icon name ='camera' size={65} color='#FFF'/>
                         </Animated.View>   
@@ -58,6 +63,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         borderColor:"#FFF",
         shadowRadius:10,
-        borderWidth:1.5
+        borderWidth:1.5,
+        marginLeft:100
     }
 });

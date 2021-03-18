@@ -12,11 +12,11 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerStackScreen() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="List">
-        <Drawer.Screen name="List" component={TabStackScreen} />
+    
+      <Drawer.Navigator>
         <Drawer.Screen name="Profile" component={Profile} />
+        <Drawer.Screen name="로그아웃" component={Profile} />
       </Drawer.Navigator>
-    </NavigationContainer>
+    
   );
 }

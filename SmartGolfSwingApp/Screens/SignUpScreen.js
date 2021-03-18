@@ -30,10 +30,10 @@ const SignUpScreen = ({ navigation }) => {
           <HeaderBackButton
               pressColorAndroid="#FFF"
               title= "back" 
-              onPress ={ () => navi.goBack()}
+              onPress ={ () => navi.goBack()} />
               
               
-              />
+             
           
            <View style ={{ }}>
                <Text style={styles.TextType}>
@@ -46,7 +46,7 @@ const SignUpScreen = ({ navigation }) => {
 
 
               
-              <NextButton />
+              <NextButton navigation = {navigation} />
               <View style ={{with:"100", height:450,justifyContent:'flex-end'}}>
                 <Text style ={styles.TextType3}>
                     회원가입시 Golfriend의 서비스 이용 약관과 {'\n'}개인정보 보호정책에 동의하게 됩니다.

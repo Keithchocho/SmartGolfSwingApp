@@ -36,27 +36,21 @@ const Signupform = ({ navigation }) => {
           
            <View style ={{ }}>
                <Text style={styles.TextType}>
-                   환영합니다.
+                   환영합니다!
                </Text>
               <Text style={styles.TextType2}>
-                 You are creating account with the email {"\n"}
-                 please send an email by xxxxx@gamil.com with any problems occured.
+                 스윙자세 진단을 위해 Golfriend@gmail.com 으로 {"\n"}
+                 새로운 계정을 만듭니다.
               </Text>
 
-
-              <TextInput 
-              style={{borderBottomWidth:1, height:45, marginHorizontal:40, width: " 80%",marginTop:30}}
-              placeholder ="Enter your first name "/>
-              
-              <TextInput 
-              style={{borderBottomWidth:1, height:45, marginHorizontal:40, width: " 80%",marginTop:30}}
-              placeholder ="Enter your Last name "/>
-
-<TextInput 
-              style={{borderBottomWidth:1, height:45, marginHorizontal:40, width: " 80%",marginTop:30}}
-              placeholder ="Enter your password "/>
               <SignUpButton />
+
            </View>
+           <View style ={{with:"100", height:450, justifyContent:"center"}}>
+                <Text style ={styles.TextType3}>
+                    회원가입시 Golfriend의 서비스 이용 약관과 {'\n'}개인정보 보호정책에 동의하게 됩니다.
+                </Text>
+            </View>
       </View>
     );
 };
@@ -79,6 +73,12 @@ const styles = StyleSheet.create({
        marginHorizontal:20,
        fontSize:16,
        fontWeight:"100",
-
-   }
+   },
+   TextType3:{
+    fontSize:12,
+    color:"#6F6F6F",
+    marginLeft:-10,
+    lineHeight:20,
+    textAlign:'center'
+  }
   });

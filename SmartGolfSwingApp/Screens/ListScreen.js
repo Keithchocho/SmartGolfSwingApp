@@ -1,5 +1,5 @@
 
-import { Button, NativeAppEventEmitter, StatusBar, TouchableOpacity, Dimensions } from "react-native";
+import { Button, NativeAppEventEmitter, StatusBar, TouchableOpacity, Dimensions, SafeAreaView } from "react-native";
 import React, { Component } from 'react';
 import  { View, 
     StyleSheet, 
@@ -13,6 +13,8 @@ import QuestionButton from "../Components/QuestionButton";
 import Awardsbox from "../Components/Awardsbox";
 import PerfectButton from "../Components/PerfectButton";
 import ImproveButton from "../Components/ImproveButton";
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from "@react-navigation/core";
 
 
 
@@ -20,26 +22,28 @@ import ImproveButton from "../Components/ImproveButton";
 
 export default class ListScreen extends Component {
 
-
+    
 
     render() {
-       
+        
+        const { navigation } = this.props;
         const {width, height} =  Dimensions.get( 'window' );
         console.log(width,height)
         
         return (
             <View style={styles.maincontainer}> 
-           <StatusBar />         
+            <StatusBar backgroundColor ={"#FFF"} barStyle={"dark-content"}></StatusBar>
+            <SafeAreaView style ={{flexDirection:"row", justifyContent:"space-between" }}>
+                <Text style={styles.Text}>Golfriend</Text>
+                <TouchableOpacity onPress={()=>navigation.navigate('Drawn')}>
+                        <FontAwesome style={{marginRight:31, marginTop:43}}name ={ 'user' } size ={20} color ={'#000'} />
+                </TouchableOpacity>
+            </SafeAreaView>         
             
            <ScrollView style={styles.container}>
               
                
-            <View style ={ styles.headerView}>
-                <QuestionButton />
-                <Text style={styles.headerText}>
-                    동영상 촬영하는법
-                </Text>
-            </View> 
+
 
             <Text style ={styles.Text}>
                     Awards

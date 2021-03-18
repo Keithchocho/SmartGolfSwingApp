@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
     },
 
     Awardsbox:{
-        height:79,
-        width:58,
-        borderRadius:20,
+        height:96,
+        width:67,
+        borderRadius:5,
         backgroundColor:"#FFF",
         position:'relative',
-        marginLeft:17,
+        marginLeft:21,
         marginTop:20,
         shadowColor:"#000",
         shadowOffset:{

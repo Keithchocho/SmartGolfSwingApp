@@ -8,12 +8,13 @@ import Signupform from '../Screens/Signupform';
 
 
 export default class NextButton extends React.Component {
-
+    
 
     constructor(props){
         super(props);
         this.state = { disabled: true, emailText: '' }
     }
+    
      
     onChangeText = (text) => {
         console.log(text, text.length);
@@ -30,7 +31,6 @@ export default class NextButton extends React.Component {
     render(){  
         
         const { navigation } = this.props;
-        
 
         return(
             <View style={{ position:'relative', alignItems:"center"}}> 
@@ -44,7 +44,7 @@ export default class NextButton extends React.Component {
             
             <View style ={[this.state.disabled ? styles.button : styles.buttonEnabled]}>
                <TouchableOpacity 
-                onPress={()=> <Signupform />}>
+                onPress={()=> navigation.navigate('Signupform')}>
                     <Text style ={[this.state.disabled ? styles.DisabledText : styles.EnabledText]}>
                         Next
                     </Text> 

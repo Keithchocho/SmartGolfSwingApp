@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     color:'black',
     justifyContent:"center",
     marginLeft:32,
-    marginTop:75,
+    marginTop:45,
     lineHeight:25
     
   },
